@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "509993201228",
+    "project_id": "bunny-hub",
+    "storage_bucket": "bunny-hub.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509993201228:android:d500023daa97a3492b4ee9",
+        "android_client_info": {
+          "package_name": "com.example.bunnyhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509993201228-gtn8vmof8ufe7ghfubrnbvq1kqrdp04p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9VJFhRZ3E1nba8g1r7XBu8jSeJmoqCcY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509993201228-gtn8vmof8ufe7ghfubrnbvq1kqrdp04p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

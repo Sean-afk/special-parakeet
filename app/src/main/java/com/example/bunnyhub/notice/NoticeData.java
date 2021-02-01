@@ -1,4 +1,4 @@
-package com.example.bunnyhub;
+package com.example.bunnyhub.notice;
 
 public class NoticeData {
     String title,image,data,time,key;

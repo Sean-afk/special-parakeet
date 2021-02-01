@@ -1,4 +1,4 @@
-package com.example.bunnyhub;
+package com.example.bunnyhub.notice;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.bunnyhub.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -31,7 +32,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class UploadNoticeActivity extends AppCompatActivity {
 
@@ -41,7 +41,7 @@ public class UploadNoticeActivity extends AppCompatActivity {
     private ImageView noticeImg;
     private EditText noticeTitle;
     private Button noticeButton;
-    private DatabaseReference reference;
+    private DatabaseReference reference,databaseReference;
     private StorageReference storageReference;
     String downloadUrl="";
     private ProgressDialog pd;
@@ -53,7 +53,7 @@ public class UploadNoticeActivity extends AppCompatActivity {
 
         pd=new ProgressDialog(this);
 
-        addImage=findViewById(R.id.uploadImage);
+        addImage=findViewById(R.id.selectImage);
         noticeImg=findViewById(R.id.noticeImageView);
         noticeTitle=findViewById(R.id.noticeTitle);
         noticeButton=findViewById(R.id.noticeButton);
@@ -118,8 +118,8 @@ public class UploadNoticeActivity extends AppCompatActivity {
         });
     }
     private void uploadData() {
-        reference= reference.child("Notice");
-        final String uniqueKey=reference.push().getKey();
+        databaseReference= reference.child("Notice");
+        final String uniqueKey=databaseReference.push().getKey();
         String title= noticeTitle.getText().toString();
 
         Calendar calendar=Calendar.getInstance();
@@ -132,7 +132,7 @@ public class UploadNoticeActivity extends AppCompatActivity {
 
         NoticeData noticeData=new NoticeData(title,downloadUrl,date,time,uniqueKey);
 
-        reference.child(uniqueKey).setValue(noticeData).addOnSuccessListener(new OnSuccessListener<Void>() {
+        databaseReference.child(uniqueKey).setValue(noticeData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 pd.dismiss();

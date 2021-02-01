@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".notice.UploadNoticeActivity">
+    tools:context=".UploadNotesActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:layout_width="130dp"
             android:layout_height="150dp"
             android:layout_margin="10dp"
-            android:id="@+id/selectImage"
+            android:id="@+id/selectFile"
             android:layout_gravity="center"
             android:elevation="5dp">
 
@@ -31,8 +31,8 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:background="@drawable/circle_green"
-                    android:src="@drawable/bell"
+                    android:background="@drawable/circle_red"
+                    android:src="@drawable/notes"
                     android:padding="15dp" />
                 <View
                     android:layout_width="match_parent"
@@ -42,7 +42,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Select Image"
+                    android:text="Select File"
                     android:textStyle="bold"
                     android:padding="5dp"
                     android:layout_marginTop="10dp"
@@ -50,6 +50,16 @@
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/fileTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No file Selected"
+            android:layout_gravity="center"
+            android:textSize="16sp"/>
+
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -57,31 +67,19 @@
             android:layout_height="match_parent">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/noticeTitle"
+                android:id="@+id/noteTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Notice title" />
+                android:hint="Title" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/notesButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Upload Notice"
             android:layout_marginTop="16dp"
-            android:textAllCaps="false"
-            android:id="@+id/noticeButton"/>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_height="380dp">
-
-            <ImageView
-                android:id="@+id/noticeImageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop" />
-        </com.google.android.material.card.MaterialCardView>
+            android:text="Upload File"
+            android:textAllCaps="false" />
 
     </LinearLayout>
 
